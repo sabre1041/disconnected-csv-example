@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Process CSV for disconnected support
-        uses: redhat-cop/github-actions/disconnected-csv
+        uses: redhat-cop/github-actions/disconnected-csv@master
         with:
           CSV_FILE: ./bundle/manifests/group-sync-operator.clusterserviceversion.yaml
           TAGS_TO_DIGESTS: 1
