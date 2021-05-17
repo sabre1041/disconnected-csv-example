@@ -1,0 +1,16 @@
+name: Test Disconnected CSV
+on:
+  push:
+
+jobs:
+  disconnected-csv:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Process CSV for disconnected support
+        uses: redhat-cop/github-actions/disconnected-csv
+        with:
+          CSV_FILE: ./bundle/manifests/group-sync-operator.clusterserviceversion.yaml
+          TAGS_TO_DIGESTS: 1
